@@ -1,0 +1,69 @@
+---
+import svgNew from '../assets/new.svg'
+
+const testimonials = [
+  { 
+    comment: `"Quá trình xây dựng Portfolio giúp tôi nhìn lại toàn bộ hành trình học tập trong học phần và tổng hợp những sản phẩm đã thực hiện. Đây là cơ hội để tôi rèn luyện kỹ năng tổ chức thông tin, trình bày nội dung và ứng dụng các công cụ số vào thực tế."`,
+    author: {
+      name: `Trải nghiệm và cảm nhận`,
+      pos: `Project Manager, Company Name`,
+      pic: `https://images.pexels.com/photos/2709386/pexels-photo-2709386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+    },
+    cls: `rotate-2 -translate-y-10`
+   },
+   { 
+    comment: `"Thông qua các bài tập và dự án, tôi đã nâng cao khả năng sử dụng công nghệ số trong học tập, biết cách tìm kiếm và đánh giá thông tin hiệu quả, đồng thời hiểu rõ hơn về cách ứng dụng trí tuệ nhân tạo để hỗ trợ công việc. Bên cạnh đó, tôi cũng phát triển kỹ năng hợp tác trực tuyến và nhận thức tốt hơn về an toàn thông tin cũng như liêm chính học thuật."`,
+    author: {
+      name: `Kiến thức và kỹ năng đạt được`,
+      pos: `Project Manager, Company Name`,
+      pic: `https://images.pexels.com/photos/2128819/pexels-photo-2128819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+    },
+    cls: `-rotate-2 -translate-x-10  z-5`
+   },
+   { 
+    comment: `"Điều tôi tâm đắc nhất là khả năng ứng dụng AI vào quá trình học tập và sáng tạo nội dung. Những công cụ này giúp tôi làm việc hiệu quả hơn, đồng thời mở ra nhiều cơ hội tiếp cận kiến thức và ý tưởng mới."`,
+    author: {
+      name: `Điều tâm đắc nhất`,
+      pos: `Project Manager, Company Name`,
+      pic: `https://images.pexels.com/photos/2169429/pexels-photo-2169429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+    },
+    cls: `rotate-2 translate-x-5 z-5`
+   },
+   { 
+    comment: `"Khó khăn lớn nhất của tôi là tổng hợp và sắp xếp nội dung từ nhiều bài tập khác nhau để tạo thành một Portfolio hoàn chỉnh. Tuy nhiên, quá trình này cũng giúp tôi cải thiện kỹ năng tự học, tư duy hệ thống và khả năng giải quyết vấn đề."`,
+    author: {
+      name: `Khó khăn gặp phải`,
+      pos: `Project Manager, Company Name`,
+      pic: `https://images.pexels.com/photos/3586798/pexels-photo-3586798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+    },
+    cls: `-rotate-2 translate-y-10 md:translate-y-15`
+   },
+]
+---
+
+
+<section>
+    <div class="max-w-4xl mx-auto pb-20 px-10 overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="flex relative">
+          <h1 class="text-3xl">Vài điều mình muốn chia sẻ</h1>
+          <img src={svgNew.src} alt="arrow" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
+        </div>
+      </div>
+  
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 py-30">
+        {testimonials.map(item => ( 
+          <div class={`flex flex-col gap-3 p-5 pr-15 bg-white border-2 shadow-[6px_6px_0px_rgba(0,0,0,0.3)] ${item.cls}`}>
+            <p>{item.comment}</p>
+            <div class="flex items-center gap-2">
+              <div>
+                <h3 class="text-lg font-semibold">{item.author.name}</h3>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+  
+    </div>
+   </section>
